@@ -37,6 +37,8 @@ if kill -0 $pid
 then
 	echo "Server already running, will not start up a  new one"
 else
+	echo "Creating config file"
+	cp Game.ini ./LinuxServer/LowLightCombat/Saved/Config/LinuxServer/Game.ini
 	echo "Starting server"
 	UE4_TRUE_SCRIPT_NAME=$(echo \"$0\" | xargs readlink -f)
 	UE4_PROJECT_ROOT=$(dirname "$UE4_TRUE_SCRIPT_NAME")
